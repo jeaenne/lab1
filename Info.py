@@ -2,7 +2,7 @@ class Info:
     def __init__(self, name):
         self.name = name
 
-    def m1(self):
+    def Name(self):
         return {
             "name": self.name,
         }
@@ -16,10 +16,10 @@ class Classic(Info):
         super().__init__(name)
         self.genre = genre
 
-    def m1(self):
-        Classic.m1 = super().m1()
-        Classic.m1.update({"genre": self.genre})
-        return Classic.m1
+    def name(self): 
+        Classic.Name = super().Name()
+        Classic.Name.update({"genre": self.genre})
+        return Classic.Name
 
     def __m2__(self):
         return f"Название: {self.name}\n Жанр: {self.genre}\n"
@@ -30,10 +30,10 @@ class Rock(Info):
         super().__init__(name)
         self.genre = genre
 
-    def m1(self):
-        Rock.m1 = super().m1()
-        Rock.m1.update({"genre": self.genre})
-        return Rock.m1
+    def Name(self):
+        Rock.Name = super().Name()
+        Rock.Name.update({"genre": self.genre})
+        return Rock.Name
 
     def __m2__(self):
         return f"Название: {self.name}\n Жанр: {self.genre}\n"
@@ -45,11 +45,11 @@ class Pop(Info):
         self.genre = genre
         self.long = long
 
-    def m1(self):
-        Pop.m1 = super().m1()
-        Pop.m1.update({"genre": self.genre})
-        Pop.m1.update({"long": self.long})
-        return Pop.m1
+    def Name(self):
+        Pop.Name = super().Name()
+        Pop.Name.update({"genre": self.genre})
+        Pop.Name.update({"long": self.long})
+        return Pop.Name
 
     def __m2__(self):
         return f"Название: {self.name}\n Жанр: {self.genre}\n Длительность: {self.long} сек\n"
@@ -62,12 +62,12 @@ class Rep(Info):
         self.long = long
         self.pip = pip
 
-    def m1(self):
-        Rep.m1 = super().m1()
-        Rep.m1.update({"genre": self.genre})
-        Rep.m1.update({"long": self.long})
-        Rep.m1.update({"long": self.pip})
-        return Rep.m1
+    def Name(self):
+        Rep.Name = super().Name()
+        Rep.Name.update({"genre": self.genre})
+        Rep.Name.update({"long": self.long})
+        Rep.Name.update({"pip": self.pip})
+        return Rep.Name
 
     def __m2__(self):
         return f"Название: {self.name}\n Жанр: {self.genre}\n Длительность: {self.long} сек\n Исполнитель:{self.pip}"
