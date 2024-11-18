@@ -6,7 +6,7 @@ def read(file_name):
         with open(file_name, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        return {'classics': [], 'rock': [], 'pops': [], 'reps': []}
+        return {'classics': [], 'rock': [], 'pops': [], 'raps': []}
 
 
 def save(info, file_name):
@@ -15,19 +15,19 @@ def save(info, file_name):
 
 
 def add_classic(info, classic):
-    info['classics'].append(classic.m1())
+    info['classics'].append(classic.Name())
 
 
 def add_rock(info, rock):
-    info['rocks'].append(rock.m1())
+    info['rocks'].append(rock.Name())
 
 
 def add_pop(info, pop):
-    info['pops'].append(pop.m1())
+    info['pops'].append(pop.Name())
 
 
-def add_rep(info, rep):
-    info['reps'].append(rep.m1())
+def add_rap(info, rap):
+    info['reps'].append(rap.Name())
 
 
 def classic_destruction(info, name):
@@ -42,5 +42,5 @@ def pop_destruction(info, name):
     info['pops'] = [pop for pop in info['pops'] if pop['name'].lower() != name.lower()]
 
 
-def rep_destruction(info, name):
-    info['reps'] = [rep for rep in info['reps'] if rep['name'].lower() != name.lower()]
+def rap_destruction(info, name):
+    info['raps'] = [rap for rap in info['raps'] if rap['name'].lower() != name.lower()]

@@ -34,11 +34,11 @@ def save(info, filename):
             branch = ET.SubElement(pop_element, key)
             branch.text = str(value)
 
-    reps = ET.SubElement(root, 'reps')
-    for rep in info['reps']:
-        rep_element = ET.SubElement(reps, 'rep')
-        for key, value in rep.items():
-            branch = ET.SubElement(rep_element, key)
+    raps = ET.SubElement(root, 'raps')
+    for rap in info['reps']:
+        rap_element = ET.SubElement(raps, 'rap')
+        for key, value in rap.items():
+            branch = ET.SubElement(rap_element, key)
             branch.text = str(value)
 
     Otstupi(root)
@@ -52,9 +52,9 @@ def load_from_xml(filename):
         tree = ET.parse(filename)
         root = tree.getroot()
     except FileNotFoundError:
-        return {'classics': [], 'rocks': [], 'pops': [], 'reps': []}
+        return {'classics': [], 'rocks': [], 'pops': [], 'raps': []}
 
-    info = {'classics': [], 'rocks': [], 'pops': [], 'reps': []}
+    info = {'classics': [], 'rocks': [], 'pops': [], 'raps': []}
 
     for classic in root.find('classics'):
         classic_info = {}
@@ -74,11 +74,11 @@ def load_from_xml(filename):
             pop_info[branch.tag] = branch.text
         info['pops'].append(pop_info)
 
-    for rep in root.find('reps'):
-        rep_info = {}
-        for branch in rep:
-            rep_info[branch.tag] = branch.text
-        info['reps'].append(rep_info)
+    for rap in root.find('raps'):
+        rap_info = {}
+        for branch in rap:
+            rap_info[branch.tag] = branch.text
+        info['raps'].append(rap_info)
 
     return info
 
@@ -95,8 +95,8 @@ def add_pop(info, pop):
     info['pops'].append(pop.m1())
 
 
-def add_rep(info, rep):
-    info['reps'].append(rep.m1())
+def add_rap(info, rap):
+    info['raps'].append(rap.m1())
 
 
 def classic_destruction(info, name):
@@ -126,10 +126,10 @@ def pop_destruction(info, name):
     info['pops'] = space
 
 
-def rep_destruction(info, name):
+def rap_destruction(info, name):
     space = []
-    for rep in info['reps']:
-        if rep['name'].lower() != name.lower():
-            space.append(rep)
+    for rap in info['raps']:
+        if rap['name'].lower() != name.lower():
+            space.append(rap)
 
-    info['reps'] = space
+    info['raps'] = space

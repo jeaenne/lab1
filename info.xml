@@ -29,20 +29,20 @@
       <long>207</long>
     </pop>
   </pops>
-  <reps>
-    <rep>
+  <raps>
+    <rap>
       <name>Привыкаю</name>
       <genre>Рэп</genre>
       <long>137</long>
       <pip>Донк</pip>
-    </rep>
-    <rep>
+    </rap>
+    <rap>
       <name>Зеркало</name>
       <genre>Рэп</genre>
       <long>150</long>
       <pip>Баклажан</pip>
-    </rep>
-  </reps>
+    </rap>
+  </raps>
   <rocks>
   </rocks>
 

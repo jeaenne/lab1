@@ -55,7 +55,7 @@ class Pop(Info):
         return f"Название: {self.name}\n Жанр: {self.genre}\n Длительность: {self.long} сек\n"
 
 
-class Rep(Info):
+class Rap(Info):
     def __init__(self, name, genre, long, pip):
         super().__init__(name)
         self.genre = genre

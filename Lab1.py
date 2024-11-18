@@ -1,6 +1,6 @@
 import json1
 import xml1
-from Info import Classic, Rock, Pop, Rep
+from Info import Classic, Rock, Pop, Rap
 
 
 class FormatError(Exception):
@@ -54,8 +54,8 @@ def print_from_file(info, file_format):
         print(f'\nName: {pop["name"]} \nGenre: {pop["genre"]} \nDuration: {pop["long"]}')
 
     print('\n-----------------------------\nRep songs:')
-    for rep in info['reps']:
-        print(f'\nName: {rep["name"]} \nGenre: {rep["genre"]} \nDuration: {rep["long"]} \nAuthor: {rep["pip"]}')
+    for rap in info['reps']:
+        print(f'\nName: {rap["name"]} \nGenre: {rap["genre"]} \nDuration: {rap["long"]} \nAuthor: {rap["pip"]}')
 
 
 def main():
@@ -80,11 +80,11 @@ def main():
               '\n1 - add classic song'
               '\n2 - add rock song'
               '\n3 - add pop song'
-              '\n4 - add rep song'
+              '\n4 - add rap song'
               '\n5 - delete classic song'
               '\n6 - delete rock song'
               '\n7 - delete pop song'
-              '\n8 - delete rep song'
+              '\n8 - delete rap song'
               '\n9 - show json'
               '\n10 - show xml'
               '\n11 - save'
@@ -124,8 +124,8 @@ def main():
             long = get_long_of_song('\nEnter song duration in seconds: ')
             pip = input('\nEnter song author: ')
 
-            rep = Rep(name, genre, long, pip)
-            xfile.add_rep(info, rep)
+            rap = Rap(name, genre, long, pip)
+            xfile.add_rap(info, rap)
 
         elif choice == '5':
             name = input('\nEnter song name: ')
@@ -148,7 +148,7 @@ def main():
         elif choice == '8':
             name = input('\nEnter song name: ')
 
-            xfile.rep_destruction(info, name)
+            xfile.rap_destruction(info, name)
             print('\nDestruction complete!')
 
         elif choice == '9':
