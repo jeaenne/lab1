@@ -14,7 +14,7 @@ class Classic(Info):
         super().__init__(name)
         self.genre = genre
 
-    def name(self): 
+    def to_dict(self): 
         Classic.to_dict = super().to_dict()
         Classic.to_dict.update({"genre": self.genre})
         return Classic.to_dict
