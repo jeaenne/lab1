@@ -15,19 +15,19 @@ def save(info, file_name):
 
 
 def add_classic(info, classic):
-    info['classics'].append(classic.Name())
+    info['classics'].append(classic.to_dict())
 
 
 def add_rock(info, rock):
-    info['rocks'].append(rock.Name())
+    info['rocks'].append(rock.to_dict())
 
 
 def add_pop(info, pop):
-    info['pops'].append(pop.Name())
+    info['pops'].append(pop.to_dict())
 
 
 def add_rap(info, rap):
-    info['reps'].append(rap.Name())
+    info['reps'].append(rap.to_dict())
 
 
 def classic_destruction(info, name):

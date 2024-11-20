@@ -2,13 +2,11 @@ class Info:
     def __init__(self, name):
         self.name = name
 
-    def Name(self):
+    def to_dict(self):
         return {
             "name": self.name,
         }
 
-    def __m2__(self):
-        return f"Название: {self.name}\n"
 
 
 class Classic(Info):
@@ -17,12 +15,9 @@ class Classic(Info):
         self.genre = genre
 
     def name(self): 
-        Classic.Name = super().Name()
-        Classic.Name.update({"genre": self.genre})
-        return Classic.Name
-
-    def __m2__(self):
-        return f"Название: {self.name}\n Жанр: {self.genre}\n"
+        Classic.to_dict = super().to_dict()
+        Classic.to_dict.update({"genre": self.genre})
+        return Classic.to_dict
 
 
 class Rock(Info):
@@ -30,14 +25,12 @@ class Rock(Info):
         super().__init__(name)
         self.genre = genre
 
-    def Name(self):
-        Rock.Name = super().Name()
-        Rock.Name.update({"genre": self.genre})
-        return Rock.Name
+    def to_dict(self):
+        Rock.to_dict = super().to_dict()
+        Rock.to_dict.update({"genre": self.genre})
+        return Rock.to_dict
 
-    def __m2__(self):
-        return f"Название: {self.name}\n Жанр: {self.genre}\n"
-
+    
 
 class Pop(Info):
     def __init__(self, name, genre, long):
@@ -45,15 +38,13 @@ class Pop(Info):
         self.genre = genre
         self.long = long
 
-    def Name(self):
-        Pop.Name = super().Name()
-        Pop.Name.update({"genre": self.genre})
-        Pop.Name.update({"long": self.long})
-        return Pop.Name
+    def to_dict(self):
+        Pop.to_dict = super().to_dict()
+        Pop.to_dict.update({"genre": self.genre})
+        Pop.to_dict.update({"long": self.long})
+        return Pop.to_dict
 
-    def __m2__(self):
-        return f"Название: {self.name}\n Жанр: {self.genre}\n Длительность: {self.long} сек\n"
-
+    
 
 class Rap(Info):
     def __init__(self, name, genre, long, pip):
@@ -62,12 +53,11 @@ class Rap(Info):
         self.long = long
         self.pip = pip
 
-    def Name(self):
-        Rep.Name = super().Name()
-        Rep.Name.update({"genre": self.genre})
-        Rep.Name.update({"long": self.long})
-        Rep.Name.update({"pip": self.pip})
-        return Rep.Name
+    def to_dict(self):
+        Rap.to_dict = super().to_dict()
+        Rap.to_dict.update({"genre": self.genre})
+        Rap.to_dict.update({"long": self.long})
+        Rap.to_dict.update({"pip": self.pip})
+        return Rap.to_dict
 
-    def __m2__(self):
-        return f"Название: {self.name}\n Жанр: {self.genre}\n Длительность: {self.long} сек\n Исполнитель:{self.pip}"
+    

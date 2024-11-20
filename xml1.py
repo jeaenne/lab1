@@ -84,19 +84,19 @@ def load_from_xml(filename):
 
 
 def add_classic(info, classic):
-    info['classics'].append(classic.m1())
+    info['classics'].append(classic.to_dict())
 
 
 def add_rock(info, rok):
-    info['rocks'].append(rok.m1())
+    info['rocks'].append(rok.to_dict())
 
 
 def add_pop(info, pop):
-    info['pops'].append(pop.m1())
+    info['pops'].append(pop.to_dict())
 
 
 def add_rap(info, rap):
-    info['raps'].append(rap.m1())
+    info['raps'].append(rap.to_dict())
 
 
 def classic_destruction(info, name):
